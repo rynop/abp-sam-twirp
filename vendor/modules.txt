@@ -61,6 +61,8 @@ github.com/aws/aws-sdk-go/private/protocol/query
 github.com/aws/aws-sdk-go/internal/sdkuri
 github.com/aws/aws-sdk-go/private/protocol/query/queryutil
 github.com/aws/aws-sdk-go/private/protocol/xml/xmlutil
+# github.com/davecgh/go-spew v1.1.1
+github.com/davecgh/go-spew/spew
 # github.com/dgrijalva/jwt-go v3.2.0+incompatible
 github.com/dgrijalva/jwt-go
 # github.com/gogo/protobuf v1.2.1
@@ -105,10 +107,15 @@ github.com/mwitkow/go-proto-validators
 github.com/mwitkow/go-proto-validators/plugin
 # github.com/pkg/errors v0.8.1
 github.com/pkg/errors
+# github.com/pmezard/go-difflib v1.0.0
+github.com/pmezard/go-difflib/difflib
 # github.com/segmentio/ksuid v1.0.2
 github.com/segmentio/ksuid
 # github.com/sirupsen/logrus v1.4.2
 github.com/sirupsen/logrus
+# github.com/stretchr/testify v1.2.2
+github.com/stretchr/testify/require
+github.com/stretchr/testify/assert
 # github.com/twitchtv/twirp v5.7.0+incompatible
 github.com/twitchtv/twirp/protoc-gen-twirp
 github.com/twitchtv/twirp
