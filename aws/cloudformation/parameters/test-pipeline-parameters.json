@@ -1,0 +1,12 @@
+{
+  "Parameters": {
+    "StageName": "test",
+    "CreateCloudFront": "true",
+    "AcmCertificateArn": "arn:aws:acm:us-east-1:xxx:certificate/yyy",
+    "CloudFrontCname": "api.route53hosted.com",
+    "VerifyFromCfHeaderVal": "isFromCDN",
+    "DDBTableName": "test-SingleTable",
+    "SSMFirebaseAdminSdkCreds": "/test/abp-sam-twirp/master/envs/GOOGLE_APPLICATION_CREDENTIALS_JSON",
+    "SSMJwtSecret": "/test/abp-sam-twirp/master/envs/JWT_SECRET_KEY"
+  }
+}

@@ -10,3 +10,18 @@
 
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
+build
+firebase-adminsdk.json
+.token
+package-lock.json
+node_modules
+
+build-ts-clients/ts-test/dist/*
+!build-ts-clients/ts-test/dist/.gitkeep
+.env
+tools
+coverage.html
+coverage.out
+
+.DS_Store
+aws/sam-local/api-env.json

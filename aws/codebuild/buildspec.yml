@@ -1,0 +1,23 @@
+version: 0.2
+phases:
+  install:
+    runtime-versions:
+      golang: 1.12
+    commands:
+      - env | sort
+      - make install
+  pre_build:
+    commands:  
+      - make tools/go-lint
+      - make tools/go-vet
+  build:
+    commands:  
+      - make api-server
+  post_build:
+    commands:    
+      - aws cloudformation package --template-file aws/cloudformation/sam-template.yml --s3-bucket $DEPLOY_BUCKET --s3-prefix $DEPLOY_S3_PREFIX --output-template-file outputtemplate.yaml
+artifacts:
+  type: zip
+  files:
+    - sam-template.yml
+    - outputtemplate.yaml

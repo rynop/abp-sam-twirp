@@ -1,0 +1,12 @@
+# Vars for run/local-dev-api
+# Keep these in sync with aws/cloudformation/sam-template.yml::Environment.Variables
+AWS_REGION=us-east-1
+AWS_PROFILE=default
+LISTEN_PORT=8080
+APP_STAGE=local
+DYNAMO_LOCAL_ENDPT=localhost:8000
+DDB_TABLENAME=local-SingleTable
+# GOOGLE_APPLICATION_CREDENTIALS_JSON: @see https://stackoverflow.com/questions/56605884/initialize-firebase-admin-sdk-with-only-environment-variables-in-golang
+GOOGLE_APPLICATION_CREDENTIALS_JSON={}
+JWT_SECRET_KEY=someSecretToGenPlatformTokens
+VERIFY_FROM_CDN_HEADER_VAL=localDevNoCDN

@@ -1,0 +1,25 @@
+{
+    "name": "abp-sam-twirp-platform-api",
+    "description": "Builds Typescript Protobuf abp-sam-twirp API clients",
+    "version": "0.0.1",
+    "engines": {
+        "node": ">=11.15.0"
+    },
+    "config": {
+        "rpc": ""
+    },
+    "scripts": {
+        "pbjs": "pbjs",
+        "pbts": "pbts",
+        "gen:ts-pb-client-clean": "rm -f ../rpc-clients/ts-protobuf/${npm_package_config_rpc}.pb*",
+        "gen:js-pb-static": "pbjs --es5 -t static-module -w commonjs -o ../rpc-clients/ts-protobuf/${npm_package_config_rpc}.pb.js ../proto/${npm_package_config_rpc}/${npm_package_config_rpc}.proto",
+        "gen:ts-pb-defs": "pbts --no-comments -o ../rpc-clients/ts-protobuf/${npm_package_config_rpc}.pb.d.ts ../rpc-clients/ts-protobuf/${npm_package_config_rpc}.pb.js",
+        "gen:ts-pb-client": "yarn gen:ts-pb-client-clean && yarn run gen:js-pb-static && yarn run gen:ts-pb-defs"
+    },
+    "private": true,
+    "dependencies": {},
+    "devDependencies": {
+        "protobufjs": "6.8.8",
+        "typescript": "3.5.1"
+    }
+}

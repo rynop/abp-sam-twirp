@@ -1,0 +1,7 @@
+{
+    "MonolithicFunction": {
+        "GOOGLE_APPLICATION_CREDENTIALS_JSON": "{\"type\":\"service_account...\"}",
+        "JWT_SECRET_KEY": "SSMJwtSecretLocal",
+        "APP_STAGE": "sam-local"
+    }
+}

@@ -1,0 +1,61 @@
+// ALL attributes optional, unless noted
+// All service methods REQUIRE platform JWT in header, unless noted
+//    - Mobile apps: Authorization: Bearer <jwt>
+//    - Web: 2 cookies. platform-token-sig and platform-token-header-payload
+
+syntax = "proto3";
+
+import "github.com/mwitkow/go-proto-validators/validator.proto";
+
+package com.abpsamtwirp.platform;
+// package dictates the path in URL
+// go_package dictates the generated go package name
+option go_package = "platform";
+
+// TODO: use google empty,timestamp,latlng
+// currently TS json client wont allow imports other than validator
+message Empty {}
+
+message Timestamp {
+  // Represents seconds of UTC time since Unix epoch
+  // 1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to
+  // 9999-12-31T23:59:59Z inclusive.
+  int64 seconds = 1;
+
+  // Non-negative fractions of a second at nanosecond resolution. Negative
+  // second values with fractions must still have non-negative nanos values
+  // that count forward in time. Must be from 0 to 999,999,999
+  // inclusive.
+  int32 nanos = 2;
+}
+
+message LatLng {
+  // The latitude in degrees. It must be in the range [-90.0, +90.0].
+  double latitude = 1
+      [ (validator.field) = {float_gte : -90.0, float_lte : 90.0} ];
+
+  // The longitude in degrees. It must be in the range [-180.0, +180.0].
+  double longitude = 2
+      [ (validator.field) = {float_gte : -180.0, float_lte : 180.0} ];
+}
+
+// Auth service
+service AuthSvc {
+  rpc Token(TokenReq) returns (TokenRes); // NO JWT in header
+}
+
+// If firebase token expired, meta 'expired_fbase_token':'true' will be return
+// If platform token expired, meta 'expired_platform_token':'true' will be
+// return If platform or firebase token has no email,
+// 'token_missing_email':'true' will be returned When firebaseToken sent
+// (logging in / creating user) 'customer_delinquent':'true' means delinquent
+// stripe customer
+message TokenReq {
+  // Send firebase token during intial login (when no platform token exists)
+  string firebaseToken = 1;
+}
+
+message TokenRes {
+  string jwt = 1;
+  int64 exp = 2; // expires (in unix time)
+}

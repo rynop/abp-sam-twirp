@@ -1,0 +1,18 @@
+{
+  "name": "abp-sam-twirp-platform-api-node-client",
+  "version": "0.0.1",
+  "scripts": {
+    "tsc": "tsc",
+    "build": "rm -rf dist && mkdir dist && touch dist/.gitkeep && rm -rf ts-json ts-protobuf && cp -r ../../rpc-clients/ts-json . && cp -r ../../rpc-clients/ts-protobuf . && tsc && cp ../../rpc-clients/ts-protobuf/* dist/ts-protobuf/"
+  },
+  "private": true,
+  "dependencies": {
+    "axios": "~0.18.0",
+    "dotenv": "~8.0.0",
+    "isomorphic-fetch": "~2.2.1",
+    "pbjs-twirp": "~0.0.1",
+    "protobufjs": "~6.8.8",
+    "typescript": "~3.5.1"
+  },
+  "devDependencies": {}
+}

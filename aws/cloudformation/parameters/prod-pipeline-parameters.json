@@ -1,0 +1,12 @@
+{
+  "Parameters": {
+    "StageName": "prod",
+    "CreateCloudFront": "true",
+    "AcmCertificateArn": "",
+    "CloudFrontCname": "api.route53hosted.com",
+    "VerifyFromCfHeaderVal": "isFromCDN",
+    "DDBTableName": "prod-SingleTable",
+    "SSMFirebaseAdminSdkCreds": "/prod/abp-sam-twirp/master/envs/GOOGLE_APPLICATION_CREDENTIALS_JSON",
+    "SSMJwtSecret": "/prod/abp-sam-twirp/master/envs/JWT_SECRET_KEY"
+  }
+}
