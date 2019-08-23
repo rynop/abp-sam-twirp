@@ -70,7 +70,3 @@ The CloudFormation parameters `SSMFirebaseAdminSdkCreds` and `SSMJwtSecret` in [
 ## Tips
 
 - Scan DynamoDB local: `aws dynamodb scan --table-name local-SingleTable --endpoint-url http://localhost:8000`
-
-## TODO:
- 
- - Remove values from aws/cloudformation/parameters/*.json
