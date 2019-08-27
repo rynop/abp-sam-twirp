@@ -47,7 +47,7 @@ clean/go-tools: clean/go-vendor
 #
 run/ngrok-api:
 	# Let ngrok handle HTTPS.  Vaild SSL cert needed for mobile dev. @see https://rynop.com/2019/05/09/howto-mobile-development-against-a-localhost-https-api/
-	ngrok http -bind-tls=true -subdomain=$(shell hostname |tr -d .)-my-platform-api 8081
+	ngrok http -bind-tls=true -subdomain=$(shell hostname |tr -d .)-my-platform-api 8080
 
 # Run API locally using .env
 run/local-dev-api: run/dynamo-up
