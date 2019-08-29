@@ -109,6 +109,8 @@ github.com/mwitkow/go-proto-validators/plugin
 github.com/pkg/errors
 # github.com/pmezard/go-difflib v1.0.0
 github.com/pmezard/go-difflib/difflib
+# github.com/rs/cors v1.6.0
+github.com/rs/cors
 # github.com/segmentio/ksuid v1.0.2
 github.com/segmentio/ksuid
 # github.com/sirupsen/logrus v1.4.2
