@@ -45,7 +45,7 @@ Enviornment variables are pulled from [sam-template.yml](./aws/cloudformation/sa
 
 1. `cp aws/sam-local/api-env.json aws/sam-local/sample-api-env.json`
 1. Copy FBase SDK private key json to [aws/sam-local/api-env.json](./aws/sam-local/api-env.json), `GOOGLE_APPLICATION_CREDENTIALS_JSON` attribute as one line (`cat firebase-adminsdk.json | jq -c '. | tojson' | pbcopy` on macOS). This file is used to set env when running `sam local`.
-1. `make run/sam-start-api`
+1. `make run/sam-local-api`
 1. Open http://127.0.0.1:3000/v1 and look at the console for the app env vars.
 
 Startup is slow right? This simulates Lambda cold starts. See [here](https://github.com/awslabs/aws-sam-cli/issues/239).
