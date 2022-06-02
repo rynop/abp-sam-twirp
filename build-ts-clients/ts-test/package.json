@@ -11,7 +11,7 @@
     "dotenv": "~8.0.0",
     "isomorphic-fetch": "~2.2.1",
     "pbjs-twirp": "~0.0.1",
-    "protobufjs": "~6.8.8",
+    "protobufjs": "~6.11.3",
     "typescript": "~3.5.1"
   },
   "devDependencies": {}
