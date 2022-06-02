@@ -19,7 +19,7 @@
     "private": true,
     "dependencies": {},
     "devDependencies": {
-        "protobufjs": "6.8.8",
+        "protobufjs": "6.11.3",
         "typescript": "3.5.1"
     }
 }
